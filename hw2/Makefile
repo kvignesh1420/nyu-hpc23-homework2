@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -O3 -march=native -g
+CXXFLAGS = -std=c++11 -O3 -fopenmp -march=native
 
 RM = rm -f
 MKDIRS = mkdir -p
