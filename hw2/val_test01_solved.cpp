@@ -1,3 +1,6 @@
+// Fixed using valgrid:
+// valgrind -s --tool=memcheck --track-origins=yes --leak-check=full ./val_test01_solved
+
 # include <cstdlib>
 # include <iostream>
 
@@ -69,7 +72,9 @@ void f ( int n )
   int i;
   int *x;
 
-  x = ( int * ) malloc ( n * sizeof ( int ) );
+  // Since n+1 elements are required, the size should be:
+  // (n+1) * sizeof ( int )
+  x = ( int * ) malloc ( (n+1) * sizeof ( int ) );
 
   x[0] = 1;
   cout << "  " << 0 << "  " << x[0] << "\n";
@@ -83,7 +88,14 @@ void f ( int n )
     cout << "  " << i << "  " << x[i] << "\n";
   }
 
-  delete [] x;
+  free(x);
+  // delete [] x;
+  // 
+  // Since x was allocated using `malloc`, we need to call `free` to 
+  // clean up the memory. Typically `delete` is called in conjunction
+  // with `new` since `new, delete` call the constructor and destructor
+  // of the objects respectively. Whereas `malloc, free` 
+  // deal with direct allocation and deletion of raw memory.
 
   return;
 }
