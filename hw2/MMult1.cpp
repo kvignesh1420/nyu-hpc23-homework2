@@ -26,8 +26,8 @@ void MMult0(long m, long n, long k, double *a, double *b, double *c) {
 
 void MMult1(long m, long n, long k, double *a, double *b, double *c) {
   // uncomment the following 2 lines to enable OpenMP based execution
-  omp_set_num_threads(8);
-  #pragma omp parallel for
+  // omp_set_num_threads(8);
+  // #pragma omp parallel for
   for (long j = 0; j < n; j+=BLOCK_SIZE) {
     for (long p = 0; p < k; p+=BLOCK_SIZE) {
       for (long i = 0; i < m; i+=BLOCK_SIZE) {

@@ -175,7 +175,7 @@ double inner_product_reference(double* a, double* b, long N){
 int main(){
 
     long N = 10000;
-    int NREPEATS=1000;
+    int NREPEATS=100;
     double* a = (double *) aligned_malloc( N * sizeof(double) );
     double* b = (double *) aligned_malloc( N * sizeof(double) );
     for (int i = 0; i < N; i++){
