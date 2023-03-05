@@ -435,4 +435,4 @@ Time taken: 4.664994  Inner product unroll 8 decouple result: 2499521.234199
 Time taken: 4.164108  Inner product unroll 8 decouple far result: 2499518.331310
 ```
 
-With less aggressive optimizations from the compiler, we can see $\approx 50%$ reduction in computation time for matrices of all sizes.
+With less aggressive optimizations from the compiler, we can see $\approx 50\%$ reduction in computation time for matrices of all sizes.
