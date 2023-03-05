@@ -43,7 +43,7 @@ Comments in `val_test01_solved.cpp` and `val_test02_solved.cpp` files.
 
 ### Question 2: Matrix multiplication
 
-I found that `BLOCK_SIZE=24` gave the highest improvement over the reference implementation.
+I found that `BLOCK_SIZE=24` gave the highest improvement over the reference implementation. Please check the `Supplementary.md` file in this folder for additional experimental results.
 
 Baseline with MMult0 and `BLOCK_SIZE=24`:
 ```
